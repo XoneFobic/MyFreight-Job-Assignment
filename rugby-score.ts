@@ -26,8 +26,12 @@ class RugbyScore {
 
           const currentScore: number = tryScore + transformationScore + penaltyScore;
 
+          if (currentScore > finalScore) {
+            break;
+          }
+
           if (currentScore <= finalScore && currentScore === finalScore) {
-            foundResults.push([tryAttempt, transformationAttempt, penaltyAttempt]);
+            foundResults.push([ tryAttempt, transformationAttempt, penaltyAttempt ]);
           }
         }
       }
@@ -41,10 +45,10 @@ class RugbyScore {
 
 const rugbyScore = new RugbyScore();
 
-for (const item of [12, 15, 21, 88]) {
+for (const item of [ 12, 15, 21, 88 ]) {
   const results = rugbyScore.findAllPossiblePlays(item);
 
-  console.log(`Results for: ${ item }`);
+  console.log(`Results for: ${item}`);
   for (const result of results) {
     console.log(result.join(' '));
   }

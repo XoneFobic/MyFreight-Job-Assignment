@@ -1,4 +1,6 @@
 /*
+  https://www.codingame.com/ide/puzzle/ascii-art-glass-stacking
+
   You are given a number, N, of glasses. Your job is to determine the largest pyramid that can be built with the glasses provided, and then create that pyramid in the output.
 
   A glass is represented in ASCII as follows:
@@ -27,7 +29,7 @@ class GlassStack {
   }
 
   public consoleOutputAsciiGlasses(layerCount: number): void {
-    const asciiGlass: string[] = [' *** ', ' * * ', ' * * ', '*****'];
+    const asciiGlass: string[] = [ ' *** ', ' * * ', ' * * ', '*****' ];
 
     for (let layer = 1; layer <= layerCount; layer++) {
       for (const asciiGlassKey in asciiGlass) {
@@ -63,8 +65,8 @@ class GlassStack {
 
 const glassStack = new GlassStack();
 
-for (const availableGlasses of [4, 10, 25, 1]) {
-  console.log(`Results for: ${ availableGlasses }`);
+for (const availableGlasses of [ 4, 10, 25, 1 ]) {
+  console.log(`Results for: ${availableGlasses}`);
   glassStack.consoleOutputAsciiGlasses(glassStack.maxLayers(availableGlasses));
   console.log(``);
 }
